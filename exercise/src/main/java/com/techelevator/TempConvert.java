@@ -9,34 +9,23 @@ public class TempConvert {
 		String celsiusFahrenheit;
 		String temperature;
 		double actualTemperature;
-		boolean actualCelsiusFahrenheit;
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.print("Please enter the temperature: ");
 		temperature = scanner.nextLine();
 		actualTemperature = Double.parseDouble(temperature);
 
-		do {
-			System.out.print("Please enter temperature in (C)elsius, or (F)ahrenheit? ");
+			System.out.print("Please enter if the temperature is in (C) for celsius, or (F) for fahrenheit? ");
 			celsiusFahrenheit = scanner.nextLine();
-//			actualCelsiusFahrenheit = Boolean.parseBoolean(celsiusFahrenheit);
-		} while ((celsiusFahrenheit == "C") || (celsiusFahrenheit == "F"));
 
-		if (celsiusFahrenheit == "F") {
+		if (celsiusFahrenheit.equalsIgnoreCase("F") ) {
 			actualTemperature = ((actualTemperature - 32) / 1.8);
-		} else {
+			System.out.print(actualTemperature);
+		} else if (celsiusFahrenheit.equalsIgnoreCase("C")) {
 			actualTemperature = ((actualTemperature * 1.8) + 32);
+			System.out.print(actualTemperature);
+		} else {
+			System.out.print("Improper Input");
 		}
-
-
-
-
-
-
-
-//		System.out.print(celsiusFahrenheit);
-
-		System.out.print(actualTemperature);
 	}
-
 }
