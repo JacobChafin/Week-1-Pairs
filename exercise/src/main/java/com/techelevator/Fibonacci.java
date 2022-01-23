@@ -14,8 +14,6 @@ public class Fibonacci {
 		integerValue = scanner.nextLine();
 		actualIntegerValue = Integer.parseInt(integerValue);
 
-		int[] fibonacciSequence = new int[12];
-
 		int firstFib = 0;
 		int secondFib = 1;
 
