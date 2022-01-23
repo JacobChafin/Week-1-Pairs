@@ -1,4 +1,7 @@
 package com.techelevator;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -8,24 +11,21 @@ public class Fibonacci {
 		Scanner scanner = new Scanner(System.in);
 		String integerValue;
 		int actualIntegerValue;
-		int fibPrimary;
-		int fibSecondary;
 
 		System.out.print("Please enter a number: ");
 		integerValue = scanner.nextLine();
 		actualIntegerValue = Integer.parseInt(integerValue);
-		int[] fibonacciSequence = new int[];
 
-		if actualIntegerValue <= fibonacciSequence[fibonacciSequence.length] {
+		int[] fibonacciSequence = new int[12];
 
-			for (int i = 2; i < fibonacciSequence.length; i++) {
-				int count1 = (i - 1);
-				int count2 = (i - 2);
-				fibonacciSequence[0] = 0;
-				fibonacciSequence[1] = 1;
-				fibonacciSequence[i] = fibonacciSequence[count1] + fibonacciSequence[count2];
+		int firstFib = 0;
+		int secondFib = 1;
+
+			for (int i = 0; i < actualIntegerValue; i = firstFib) {
+				int thirdFib = firstFib + secondFib;
+				firstFib = secondFib;
+				secondFib = thirdFib;
+				System.out.print(i + " ");
 			}
-		}
 	}
 }
-//0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,
